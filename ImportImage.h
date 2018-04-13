@@ -42,22 +42,22 @@ Portland Group C / C++	        Not supported
 
 class ImportImage {
 private:
-	std::ofstream test_file;
+  std::ofstream test_file;
 protected:
-	typedef std::vector<std::vector<int>> vec2d;
-	vec2d _Bg_pixels; // 2D vectors containing
-	vec2d _In_pixels; // R values for every pixel
-	BMP _Bg_image;
-	BMP _In_image;
-	size_t width;
-	size_t height;
+  typedef std::vector<std::vector<int>> vec2d;
+  vec2d _Bg_pixels; // 2D vectors containing
+  vec2d _In_pixels; // R values for every pixel
+  BMP _Bg_image;
+  BMP _In_image;
+  size_t width;
+  size_t height;
 public:
-	std::vector<int> test;
-	ImportImage(const std::string& Bg_image_filename, const std::string& In_imagefile_name);
-	~ImportImage();
+  std::vector<int> test;
+  ImportImage(const std::string& Bg_image_filename, const std::string& In_imagefile_name);
+  ~ImportImage();
 
 
-	void ExportImage(const std::string& Export_filename);
-	std::vector <std::vector<int>> PassBgPixelsVector();
-	std::vector <std::vector<int>> PassInPixelsVector();
+  void ExportImage(const std::string& Export_filename);
+  std::vector <std::vector<int>> PassBgPixelsVector();
+  std::vector <std::vector<int>> PassInPixelsVector();
 };
