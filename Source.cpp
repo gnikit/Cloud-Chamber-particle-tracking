@@ -9,11 +9,11 @@ int main() {
   std::string bg_object = "./images/4bg.bmp";  // background image
   ImportImage track(bg_object, input_object);
   ProcessImage process(track);
-  process.CompleteAnalysis(100, 20);
+  process.CompleteAnalysis(100, 100);
 
 
-  std::string black = "BlackBG.bmp";
-  std::string white = "WhiteBG.bmp";
+  std::string black = "./output/BlackBG.bmp";
+  std::string white = "./output/WhiteBG.bmp";
 
   /*black = input_object + black;
   white = input_object + white;*/

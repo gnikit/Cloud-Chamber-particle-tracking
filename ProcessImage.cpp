@@ -463,11 +463,11 @@ void ProcessImage::SimpleProcessRun() {
 
 void ProcessImage::DetectAll(size_t track_length, size_t area_sensitivity) {
   using namespace std;
-  SampleStatistics(_IN);
+  //SampleStatistics(_IN);
   _cut_off = (stat._sMean + 1 * stat._sSdiv) / 2;  // usually is effective as a cut_off
 
-  //FullStatistics(_IN, "include0");  // OR use this
-  //_cut_off = (stat._mean + 3 * stat._sdiv);
+  FullStatistics(_IN, "include0");  // OR use this
+  _cut_off = (stat._mean + 1 * stat._sdiv);
 
   cout << "Using a cut off of: " << _cut_off
     << " for the Binary flush process" << endl;
@@ -490,7 +490,7 @@ void ProcessImage::DetectAll(size_t track_length, size_t area_sensitivity) {
     else {
       sort(temp.begin(), temp.end(), ProcessImage::less_than_xcord); // sorting in x
       _run.push_back(temp);
-      ExportImageBlackBG("ImageBeforeAppending.bmp");
+      ExportImageBlackBG("./output/ImageBeforeAppending.bmp");  // TODO: Make modular
     }
     getMax();
   }
@@ -503,7 +503,6 @@ void ProcessImage::DetectAll(size_t track_length, size_t area_sensitivity) {
   cout << "No. of trajectories before search: " << _run.size() << std::endl;
   clog << "No. of Trajectories discarded due to small No. of pixels: " << count << endl;
 
-  /* The following process will (attempt to) append trajectories that are nearby */
   /* The following process will (attempt to) append trajectories that are nearby */
   bool isFound;
   for (i = 0; i < _run.size() - 1; i++) {
