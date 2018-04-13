@@ -1,4 +1,3 @@
-#pragma once
 /* Includes the files underneath only once per compilation*/
 /*
 List of compilers that support #pragma once
@@ -19,6 +18,17 @@ IAR C / C++      Supported
 Oracle Developer Studio C / C++	Supported(since 12.5)
 Portland Group C / C++	        Not supported
 */
+#pragma once
+#if defined (__INTEL_COMPILER)
+#include <mathimf.h>  // Intel Math library
+#define COMPILER "INTEL"
+#elif defined (__GNUC__)
+#include <math.h>
+#define COMPILER "G++"
+#else
+#include <math.h>
+#define COMPILER "YOU KNOW NOTHING JOHN SNOW"
+#endif
 
 #include <iostream>
 #include <cmath>
