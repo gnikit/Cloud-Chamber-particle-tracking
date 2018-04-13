@@ -5,8 +5,8 @@
 
 int main() {
   srand(time(NULL));
-  std::string input_object = "test4.bmp";
-  std::string bg_object = "bg4.bmp";
+  std::string input_object = "./images/scene00044.bmp";  // image with trajectories
+  std::string bg_object = "./images/4bg.bmp";  // background image
   ImportImage track(bg_object, input_object);
   ProcessImage process(track);
   process.CompleteAnalysis(100, 20);

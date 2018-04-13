@@ -4,11 +4,11 @@ ImportImage::~ImportImage() {}
 
 ImportImage::ImportImage(const std::string& Bg_image_filename, const std::string& In_image_filename) {
   /*
-  Allows the user to input two BMP files by name that are located in the same directory as Source.cpp.
-  The two BMP images (assumed to be Greyscaled (R=G=B)) are then passed into two 2D vectors.
-  One for the Background (BG) image and one for the Inserted (IN) image.
-
-  Then the method carries on with a pixel-to-pixel substraction (In_image (2nd par) - Bg_image (1st par))
+  *Allows the user to input two BMP files by name that are located in the same directory as *Source.cpp.
+  *The two BMP images (assumed to be Greyscaled (R=G=B)) are then passed into two 2D vectors.
+  *One for the Background (BG) image and one for the Inserted (IN) image.
+  *
+  *Then the method carries on with a pixel-to-pixel substraction (In_image (2nd par) - Bg_image (1st par))
   */
 
   _Bg_image.ReadFromFile(Bg_image_filename.c_str());
