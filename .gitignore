@@ -1,13 +1,7 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/Cloud-Chamber-particle-tracking/v15
-/.vs
-/Cloud-Chamber-particle-tracking.vcxproj.user
-/Cloud-Chamber-particle-tracking.vcxproj.filters
-/Cloud-Chamber-particle-tracking.vcxproj
-/Cloud-Chamber-particle-tracking.sln
-/Debug/Cloud-Ch.2415590B.tlog
-/Debug
-/Release
+﻿build/
+Debug/
+Release/
+.vs/
+*.vcxproj*
+*.sln
+*.tlog
